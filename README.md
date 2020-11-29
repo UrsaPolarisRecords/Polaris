@@ -4,25 +4,25 @@ A visualized decentralized incentivized music encyclopedia, with tokens awarded 
 Ursa Polaris Records, or Polaris for short, consists of five layers. They are as follows, in the order of data flow:
 
 1. Data Input Field
-  -Consists of fields for: Reference Link, Release Name, Release Date, Group(s), Members, Guests, Label(s), Track List, Track Link for each track list
-  -MVP is a set of javascript fields that, when all required info is provided, allows the user to submit a blockchain transaction containing all of the entered information, as well as a stake of native tokens.
+    - Consists of fields for: Reference Link, Release Name, Release Date, Group(s), Members, Guests, Label(s), Track List, Track Link for each track list
+    - MVP is a set of javascript fields that, when all required info is provided, allows the user to submit a blockchain transaction containing all of the entered information, as well as a stake of native tokens.
 
 2. Blockchain Record
-  -Consists of blockchain transactions with the "memo" field populated by graph database commands, which can then be replayed to generate the database.
-  -Also consists of "Upvote" and "Downvote" commands, which require a small stake of tokens, and are stored in RAM.
-  -Also consists of "Comment" and "Like" commands, which are sent in the "memo" field as Graph Database commands, which reference the User ID and Comment/like to the piece of data in question.
-  -Also consists of staked endorsements, where a user stakes their tokens to a particular Graph Database node as a means for advertising
+    - Consists of blockchain transactions with the "memo" field populated by graph database commands, which can then be replayed to generate the database.
+    - Also consists of "Upvote" and "Downvote" commands, which require a small stake of tokens, and are stored in RAM.
+    - Also consists of "Comment" and "Like" commands, which are sent in the "memo" field as Graph Database commands, which reference the User ID and Comment/like to the piece of data in question.
+    - Also consists of staked endorsements, where a user stakes their tokens to a particular Graph Database node as a means for advertising
  
 3. Graph Database
-  -Consists of a relational graph database like Neo4j, which creates nodes of each Master Project, Release, Group, Artist, Label, Song, and Sound Recording, and then creates edges representing the connections involved in each release. 
-  -Organized with the "Song" as the basic building block, which is used in a Sound Recording that features Groups and other Artists, which is used in a Release that features a Label and more Artists, which is the Master Project if it's the first release or otherwise canonical version of the project.
+    - Consists of a relational graph database like Neo4j, which creates nodes of each Master Project, Release, Group, Artist, Label, Song, and Sound Recording, and then creates edges representing the connections involved in each release. 
+    - Organized with the "Song" as the basic building block, which is used in a Sound Recording that features Groups and other Artists, which is used in a Release that features a Label and more Artists, which is the Master Project if it's the first release or otherwise canonical version of the project.
  
 4. Graph-to-JIT-Translator
-  -Consists of a tool that fetches a node from the graph database, and any other node within 5 degrees of separation, and uses the information to populate a non-heirarchical Hyperbolic Graph, similar to the "Hypertree" developed by Xerox. 
-  -If a user is not logged in with a defined home node, upon initial startup the tool chooses which node to fetch based on assigning a weight to all nodes based on their staked endorsements, and then randomly choosing a node with its likelihood determined by the quantity of staked endorsements.
-  -Could potentially use the Javascript Infovis Toolkit (JIT) developed by Nicolas Garcia Belmonte for this purpose.
+    - Consists of a tool that fetches a node from the graph database, and any other node within 5 degrees of separation, and uses the information to populate a non-heirarchical Hyperbolic Graph, similar to the "Hypertree" developed by Xerox. 
+    - If a user is not logged in with a defined home node, upon initial startup the tool chooses which node to fetch based on assigning a weight to all nodes based on their staked endorsements, and then randomly choosing a node with its likelihood determined by the quantity of staked endorsements.
+    - Could potentially use the Javascript Infovis Toolkit (JIT) developed by Nicolas Garcia Belmonte for this purpose.
   
 5. Hyperbolic Graph Interface
-  -Consists of a hyperbolic graph, or a representation of nodes and their connections that has been stretched over a hyperbolic space, such that nodes infinitely bunch up close to the edge of the graph, much like Escher's "Angels and Demons".
-  -Also consists of a text browser where users can read about the selected node of the graph.
-  -The bottom layer of the graph consists of the Artists, which are connected to the next layer of the graph, which consists of the Groups. The top layer, Projects, appears when an Artist or Group is clicked on. Clicking on a Project, Artist, or Group will bring up that node's info in the browser.
+    - Consists of a hyperbolic graph, or a representation of nodes and their connections that has been stretched over a hyperbolic space, such that nodes infinitely bunch up close to the edge of the graph, much like Escher's "Angels and Demons".
+    - Also consists of a text browser where users can read about the selected node of the graph.
+    - The bottom layer of the graph consists of the Artists, which are connected to the next layer of the graph, which consists of the Groups. The top layer, Projects, appears when an Artist or Group is clicked on. Clicking on a Project, Artist, or Group will bring up that node's info in the browser.
