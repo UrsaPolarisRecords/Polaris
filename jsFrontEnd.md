@@ -2,7 +2,8 @@ The following text is pseudo-code for the Javascript front-end of the Polaris mu
 
 When addProject button is pressed,
 display text boxes for:
-`projectReferences (required),
+```
+projectReferences (required),
     (if possible, automatically retrieve data from music database)
 projectName (required),
 projectReleaseDate (year required),
@@ -32,10 +33,11 @@ projectTracks:
     trackNotes
 projectLabel,
 projectLinerNotes (long text),
-projectBio (long text),`
+projectBio (long text),
 {and then in an upload popup}
-`projectCover (required, user uploads photos)
-    projectMedia (user uploads photos & links videos),`
+projectCover (required, user uploads photos)
+    projectMedia (user uploads photos & links videos),
+```
 
 
 
@@ -43,7 +45,8 @@ when all required project information is filled out,
 allow user to click the submit button.
 Sumbit button sends each item in the project:
 each item in the project is sent as a graph database command:
-`projectName (check required),
+```
+projectName (check required),
 projectReleaseDate (check year required),
 projectMaster,
 projectArtist(s) (check required):
@@ -59,7 +62,8 @@ projectLabel,
 projectLinerNotes (long string),
 projectBio (long string),
 projectCover is uploaded and the hyperlink is sent,
-    projectMedia is uploaded or not, and hyperlinks are sent.`
+    projectMedia is uploaded or not, and hyperlinks are sent.
+```
 
 each command is sent as EOS memos of NEO4j Cypher graph database commands.
 
@@ -74,11 +78,17 @@ Verify the transaction is irreversible before proceeding.
 
 Infovis Toolkit Object:
 
-`(hypergraph), as described in a separate document. `
+```
+(hypergraph), as described in a separate document. 
+```
 
-`(label pie chart/sunburst chart), displaying share of plays/sales of major vs. independent labels with each subsidiary displayed in a deeper layer of the sunburst`
+```
+(label pie chart/sunburst chart), displaying share of plays/sales of major vs. independent labels with each subsidiary displayed in a deeper layer of the sunburst
+```
 
-`(map overlay), displaying a map of artists, groups, and projects. Perhaps selectable areas and a hypergraph overlay. Consider incorporating cxc.world`
+```
+(map overlay), displaying a map of artists, groups, and projects. Perhaps selectable areas and a hypergraph overlay. Consider incorporating cxc.world
+```
 
 
 
@@ -87,10 +97,13 @@ Informational display, off to the right:
 
 Project Display (when a project is clicked):
 
-`projectNumber (auto-assigned, uneditable)`
+```
+projectNumber (auto-assigned, uneditable)
+```
 
 Include edit button for these fields:
-`projectName,
+```
+projectName,
 projectAltNames,
 projectReleaseDate,
 projectMaster,
@@ -103,22 +116,28 @@ projectLinerNotes,
 projectBio,
 projectTrivia,
 projectCover,
-projectMedia,`
+projectMedia,
+```
 
 Track Display: (when a track is clicked):
 
-`trackNumber (auto-assigned, uneditable),`
+```
+trackNumber (auto-assigned, uneditable),
+```
 
 Include edit button for these fields:
-`trackName,
+```
+trackName,
 trackAltNames,
 trackSongwriter(s),
 trackComposer(s),
-trackNotes,`
+trackNotes,
+```
 
 Artist Display: (when an artist is clicked):
 
-`artistNumber (auto-assigned, uneditable),
+```
+artistNumber (auto-assigned, uneditable),
 artistYearsActive (calculated by pinging graph database
                     for associated projectReleaseDates)
 artistCities (calculated by pinging graph database for related
@@ -126,43 +145,54 @@ artistCities (calculated by pinging graph database for related
                     can be edited from Project Display)
 artistRoles (calculated by pinging graph database for related
                     projectArtistRole values,
-                    can be edited from Project Display)`
+                    can be edited from Project Display)
+```
 Include edit button for these fields:
-`artistName,
+```
+artistName,
 artistAltNames,
 artistBio,
 artistTrivia,
-artistMedia,`
+artistMedia,
+```
 
 
 Group Display: (when a group is clicked):
 
-`groupNumber (auto-assigned, uneditable),
+```
+groupNumber (auto-assigned, uneditable),
 groupYearsActive (calculated by pinging graph database
                     for associated projectReleaseDates)
 groupCities (calculated by pinging graph database for related
                     projectArtistCity values for matching
                     projectArtistGroupGuest,
-                    can be edited from Project Display)`
+                    can be edited from Project Display)
+```
 Include edit button for these fields:
-`groupName,
+```
+groupName,
 groupAltNames,
 groupBio,
 groupTrivia,
-groupMedia,`
+groupMedia,
+```
 
 
 Label Display: (when a label is clicked):
 
 
-`labelNumber (auto-assigned, uneditable),
+```
+labelNumber (auto-assigned, uneditable),
 labelYearsActive (calculated by pinging graph database
-                    for associated projectReleaseDates)`
+                    for associated projectReleaseDates)
+```
 
 Include edit button for these fields:
-`labelName,
+```
+labelName,
 labelCity
 labelBio,
 labelTrivia,
-labelMedia,`
+labelMedia,
+```
 
