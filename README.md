@@ -1,7 +1,10 @@
 # Polaris
+
+![Image of Polaris](https://github.com/UrsaPolarisRecords/Polaris/blob/main/Website%20Mock-up-01.png)
+
 A visualized decentralized incentivized music encyclopedia, with tokens awarded to curators and artists, and used for native advertising
 
-Ursa Polaris Records, or Polaris for short, consists of five layers. They are as follows, in the order of data flow:
+Ursa Polaris Records, or Polaris for short, consists of five stack layers. They are as follows, in the order of data flow:
 
 1. Data Input Field
     - Consists of fields for: Reference Link, Release Name, Release Date, Group(s), Members, Guests, Label(s), Track List, Track Link for each track list
