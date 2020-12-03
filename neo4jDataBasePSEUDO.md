@@ -1,5 +1,6 @@
 Node Types:
-    Song
+```
+	Song
         *#
         *name
         altnames
@@ -61,8 +62,10 @@ Node Types:
         *#
         *name 
         category
+```
 
 Edges per Node:
+```
     Song:
         Track --> Uses --> Song
         Artist --> Writer --> Song
@@ -92,5 +95,5 @@ Edges per Node:
         Artist --> Photographed In --> Media
     Role:
         Artist --> Has Done --> Role
-
+```
 the 'Roles' nodes may be omitted if there is a means to easily search artists' roles as an attribute of an edge between two nodes.
