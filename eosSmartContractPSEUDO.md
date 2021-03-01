@@ -62,23 +62,23 @@ Based on this practical maximum of tens or hundreds of thousands of tokens, it m
 
 Alternatively, an alternative transaction multiplier could be used:
 ```
-                                (transactionCounter^e)*((ln(transactionCounter))/(transactionCounter))
+(transactionCounter^e)*((ln(transactionCounter))/(transactionCounter))
 ```
 which does not have a scientific backing behind its selection but produces a higher maximum supply and a more linear curve.
 
-The graph of this function produces a decay curve with a peak of 0.869 at `transactionCounter` = 10.616, with a very slow decay toward an asymptote at 0. This would still award whole tokens for a 100 `transactionTypeMultiplier` until the forty millionth transaction, still award at least a 'cent' (0.01) until the eight trillionth transaction, and still award at least a 'cent cent' (0.0001) until the quintillionth (10^18) transaction
+The graph of this function produces a decay curve with a peak of 0.869 at `transactionCounter = 10.616`, with a very slow decay toward an asymptote at 0. This would still award whole tokens for a 100 `transactionTypeMultiplier` until the forty millionth transaction, still award at least a 'cent' (0.01) until the eight trillionth transaction, and still award at least a 'cent cent' (0.0001) until the quintillionth (10^18) transaction
 
 Multiplied by 100, which is the maximum value for `transactionTypeMultiplier`, the number of tokens awarded would be:
 ```   
-                                    10^1 = 672
-                                    10^2 = 7,388
-                                    10^3 = 48,487
-                                    10^4 = 263,025
-                                    10^5 = 1,296,863
-                                    10^6 = 6,044,143
-                                    10^7 = 27,149,929
-                                    10^8 = 118,834,271
-                                    10^9 = 510,232,799
+10^1 = 672
+10^2 = 7,388
+10^3 = 48,487
+10^4 = 263,025
+10^5 = 1,296,863
+10^6 = 6,044,143
+10^7 = 27,149,929
+10^8 = 118,834,271
+10^9 = 510,232,799
 ```   
 
 The Contract Functions are:
@@ -96,18 +96,23 @@ function(requestArtistAccess)(keep in Beta until data integrity has been tested)
 ```
 
 what needs to be kept in the state for the contract:
+```
 -transactioncounter
+```
 
 what needs to be kept in the state for each account:
+```
 -Accounts & Token values
 -24hr transaction counter (require a stake of more tokens on each subsequent transaction, transaction counter decays over 24 hours)
 -number of up and down votes on data supplied by the account(for data input reputation)
 -number of up and down votes where account staked tokens to verify data, in which the account voted with the consensus (for curator reputation)
 -link to merkle root of a private blockchain used to verify artists' info to payout in the future
+```
 
 what needs to be kept in the state for the data item, temporarily, until the data is verified by a supermajority after 10 days (staked tokens are forfeited if data is determined bad by a supermajority of up and downvotes, or if a supermajority of other up and down votes contradict the account's votes, forfeited tokens are returned to other accounts that verified with the consensus or contributed good data):
+```
 -account contributor & contributor's stake
 -accounts upvoting data & their stake
 -accounts downvoting data & their stake
 -time remaining until data is ruled valid or invalid (resets after 10 days if 10-vote threshold is not reached)
-
+```
