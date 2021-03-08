@@ -36,7 +36,7 @@ ACTION Edit(name curator, uint64_t id, string message) {
   //require authorization of curator
   require_auth( curator );
   //publish curator, sourcelink, and message
-  //mint tokens (ftxc*1000)
+  //mint tokens (ftxc*2)
   //increment the transaction counter plus 1
 
 }
