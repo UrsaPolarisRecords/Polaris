@@ -27,6 +27,17 @@ ACTION addproject(name curator, string sourcelink, string message) {
   require_auth( curator );
   //publish curator, sourcelink, and message
   //mint tokens (ftxc*1000)
+  //increment the transaction counter plus 1
+
+}
+
+
+ACTION Edit(name curator, uint64_t id, string message) {
+  //require authorization of curator
+  require_auth( curator );
+  //publish curator, sourcelink, and message
+  //mint tokens (ftxc*1000)
+  //increment the transaction counter plus 1
 
 }
 /*
