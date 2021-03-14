@@ -45,6 +45,16 @@ simplified to
 
 The graph of this function produces a decay curve with a peak of 0.3679 at `transactionCounter = 2.718`, with a relatively slow decay toward an asymptote at 0.
 
+
+
+![Screenshot from 2021-03-14 00-10-06](https://user-images.githubusercontent.com/36178664/111061816-002ffc80-845a-11eb-86c6-630a01c961c5.png)
+
+![Screenshot from 2021-03-14 00-10-37](https://user-images.githubusercontent.com/36178664/111061903-81878f00-845a-11eb-944c-b100a82ec86d.png)
+
+![Screenshot from 2021-03-14 00-15-00](https://user-images.githubusercontent.com/36178664/111061910-8b10f700-845a-11eb-90a5-3aea2b8f8896.png)
+
+
+
 Multiplied by 100, which is the maximum value for `transactionTypeMultiplier`, the number of tokens awarded would be:
 ```
 txs      tokens
@@ -58,29 +68,29 @@ txs      tokens
 10^8 = 16,966
 10^9 = 21,472
 ```
-Based on this practical maximum of tens or hundreds of thousands of tokens, it may be necessary to multiply each token award by 1000, which would still award whole tokens for a 100 `transactionTypeMultiplier` until the millionth transaction, still award at least a 'cent' (0.01) until the hundred millionth transaction, and still award at least a 'cent cent', or 0.0001 until the twenty billionth transaction. 
+Based on this practical maximum of tens or hundreds of thousands of tokens, it may be necessary to multiply each token award by 1000, which would still award whole tokens for a 100 `transactionTypeMultiplier` until the millionth transaction, still award at least a 'cent' (0.01) until the hundred millionth transaction, and still award at least a 'cent cent', or 0.0001 until the 147 trillionth transaction. 
 
 Alternatively, an alternative transaction multiplier could be used:
 ```
-(transactionCounter^e)*((ln(transactionCounter))/(transactionCounter))
+(transactionCounter^e)/(transactionCounter^pi)
 ```
 which does not have a scientific backing behind its selection but produces a higher maximum supply and a more linear curve.
 
-The graph of this function produces a decay curve with a peak of 0.869 at `transactionCounter = 10.616`, with a very slow decay toward an asymptote at 0. This would still award whole tokens for a 100 `transactionTypeMultiplier` until the forty millionth transaction, still award at least a 'cent' (0.01) until the eight trillionth transaction, and still award at least a 'cent cent' (0.0001) until the quintillionth (10^18) transaction
+
 
 Multiplied by 100, which is the maximum value for `transactionTypeMultiplier`, the number of tokens awarded would be:
 ```   
-10^1 = 672
-10^2 = 7,388
-10^3 = 48,487
-10^4 = 263,025
-10^5 = 1,296,863
-10^6 = 6,044,143
-10^7 = 27,149,929
-10^8 = 118,834,271
-10^9 = 510,232,799
+10^1 = 480
+10^2 = 2,295
+10^3 = 9,140
+10^4 = 34,967
+10^5 = 132,414
+10^6 = 500,083
+10^7 = 1,887,306
+10^8 = 7,121,328
+10^9 = 26,869,400
 ```   
-
+The graph of this function produces a decay curve with a peak of 1 at `transactionCounter = 1`, with a very slow decay toward an asymptote at 0. This would still award whole tokens for a 100 `transactionTypeMultiplier` until the 50 thousandth transaction, still award at least a 'cent' (0.01) until the 2.7 billionth transaction, and still award at least a 'cent cent' (0.0001) until the quintillionth (10^18) transaction
 The Contract Functions are:
 
 ```
