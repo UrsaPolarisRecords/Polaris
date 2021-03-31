@@ -8,6 +8,10 @@
 
 //The First example is a Hypertree:
 // https://philogb.github.io/jit/static/v20/Jit/Examples/Hypertree/example2.html
+
+//and a better example of the geometry:
+//https://philogb.github.io/jit/static/v20/Jit/Examples/Hypertree/example1.html
+
 /*
 var labelType, useGradients, nativeTextSupport, animate;
 
