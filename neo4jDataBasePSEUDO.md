@@ -47,6 +47,7 @@ Node Types:
     Artist
         *#
         *name
+	*color
         altnames
 	city        
 	bio
