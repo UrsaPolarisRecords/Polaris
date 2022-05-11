@@ -29,3 +29,14 @@ Ursa Polaris Records, or Polaris for short, consists of five stack layers. They 
     - Consists of a hyperbolic graph, or a representation of nodes and their connections that has been stretched over a hyperbolic space, such that nodes infinitely bunch up close to the edge of the graph, much like Escher's "Angels and Demons". An example of a non-heirarchical hypergraph, rather than the hypertree previously linked, is shown here: https://philogb.github.io/jit/static/v20/Jit/Examples/Hypertree/example2.html
     - Also consists of a text browser where users can read about the selected node of the graph.
     - The bottom layer of the graph consists of the Artists, which are connected to the next layer of the graph, which consists of the Groups. The top layer, Projects, appears when an Artist or Group is clicked on. Clicking on a Project, Artist, or Group will bring up that node's info in the browser. Examples of some of the graphical visualization elements that can be incorporated are available here: https://philogb.github.io/jit/demos.html
+
+Here's what a project input field could look like:
+
+![Website dataStructure-02](https://user-images.githubusercontent.com/36178664/167821145-5b3164b4-bfc2-4a72-b419-6cb850da5cb0.png)
+
+
+Here are some outlines of the graph and blockchain data structues. Somewhere is an improved version of the graph database structure that includes a distinction between songs and sound recordings, and this document will be updated once it is located.
+![Website dataStructure-03](https://user-images.githubusercontent.com/36178664/167820763-24cc9e38-5fed-4b4d-844c-c760013d8bdd.png)
+![Website dataStructure-05](https://user-images.githubusercontent.com/36178664/167820813-774332cd-8c9a-4362-b208-8d0e6a031a43.png)
+![Website dataStructure-04](https://user-images.githubusercontent.com/36178664/167820858-d1b9d320-d5d3-4e66-9e51-c58dc6a8d8cb.png)
+
