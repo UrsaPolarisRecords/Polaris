@@ -1,10 +1,459 @@
 // include the Infovis Toolkit library
 const infovis = require('path/to/infovis.js');
 
+
+
+var artistsData = [{  
+    "id": "artist0",  
+    "name": "Trent Reznor",  
+    "data": {  
+        "$dim": 10,  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": [{  
+        "nodeTo": "artist1",  
+        "data": {  
+            "weight": 3  
+        }  
+    }, {  
+        "nodeTo": "artist2",  
+        "data": {  
+            "weight": 3  
+        }  
+    }, {  
+        "nodeTo": "artist3",  
+        "data": {  
+            "weight": 3  
+        }  
+    }, {  
+        "nodeTo": "artist4",  
+        "data": {  
+            "weight": 1  
+        }  
+    }, {  
+        "nodeTo": "artist5",  
+        "data": {  
+            "weight": 1  
+        }  
+    }]  
+}, {  
+    "id": "artist1",  
+    "name": "Richard Patrick",  
+    "data": {  
+        "$dim": 10,  
+//        "$type": "square",  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": [{  
+        "nodeTo": "artist0",  
+        "data": {  
+            "weight": 3  
+        }  
+    }, {  
+        "nodeTo": "artist4",  
+        "data": {  
+            "weight": 1  
+        }  
+    }, {  
+        "nodeTo": "artist5",  
+        "data": {  
+            "weight": 1  
+        }  
+    }]  
+}, {  
+    "id": "artist2",  
+    "name": "Jeordie White",  
+    "data": {  
+        "$dim": 10,  
+//        "$type": "triangle",  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": [{  
+        "nodeTo": "artist0",  
+        "data": {  
+            "weight": 3  
+        }  
+    }]  
+}, {  
+    "id": "artist3",  
+    "name": "Danny Lohner",  
+    "data": {  
+        "$dim": 10,  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": [{  
+        "nodeTo": "artist0",  
+        "data": {  
+            "weight": 3  
+        }  
+    }, {  
+        "nodeTo": "artist5",  
+        "data": {  
+            "weight": 3  
+        }  
+    }]  
+}, {  
+    "id": "artist4",  
+    "name": "Jeff Ward",  
+    "data": {  
+        "$dim": 10,  
+//        "$type":"triangle",  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": [{  
+        "nodeTo": "artist0",  
+        "data": {  
+            "weight": 1  
+        }  
+    }, {  
+        "nodeTo": "artist1",  
+        "data": {  
+            "weight": 1  
+        }  
+    }]  
+}, {  
+    "id": "artist5",  
+    "name": "Chris Vrenna",  
+    "data": {  
+        "$dim": 10,  
+//        "$type": "star",  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": [{  
+        "nodeTo": "artist0",  
+        "data": {  
+            "weight": 1  
+        }  
+    }, {  
+        "nodeTo": "artist1",  
+        "data": {  
+            "weight": 1  
+        }  
+    }, {  
+        "nodeTo": "artist3",  
+        "data": {  
+            "weight": 3  
+        }  
+    }]  
+}, {  
+    "id": "artist6",  
+    "name": "Dave Grohl",  
+    "data": {  
+        "$dim": 10,  
+//        "$type": "star",  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": [{  
+        "nodeTo": "artist0",  
+        "data": {  
+            "weight": 1  
+        }  
+    }, {  
+        "nodeTo": "artist7",  
+        "data": {  
+            "weight": 1  
+        }  
+    }, {  
+        "nodeTo": "artist8",  
+        "data": {  
+            "weight": 3  
+        }  
+    }, {  
+        "nodeTo": "artist9",  
+        "data": {  
+            "weight": 3  
+        }  
+    }, {  
+        "nodeTo": "artist10",  
+        "data": {  
+            "weight": 3  
+        }  
+    }, {  
+        "nodeTo": "artist11",  
+        "data": {  
+            "weight": 3  
+        }  
+    }, {  
+        "nodeTo": "artist12",  
+        "data": {  
+            "weight": 3  
+        }  
+    }, {  
+        "nodeTo": "artist13",  
+        "data": {  
+            "weight": 3  
+        }  
+    }, {  
+        "nodeTo": "artist14",  
+        "data": {  
+            "weight": 3  
+        }  
+    }]  
+}, {  
+    "id": "artist7",  
+    "name": "Kurt Cobain",  
+    "data": {  
+        "$dim": 10,  
+//        "$type": "star",  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": [{  
+        "nodeTo": "artist6",  
+        "data": {  
+            "weight": 1  
+        }  
+    }, {  
+        "nodeTo": "artist8",  
+        "data": {  
+            "weight": 1  
+        }  
+    }, {  
+        "nodeTo": "artist9",  
+        "data": {  
+            "weight": 1  
+        }  
+    }]  
+}, {  
+    "id": "artist8",  
+    "name": "Krist Novoselic",  
+    "data": {  
+        "$dim": 10,  
+//        "$type": "star",  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": [{  
+        "nodeTo": "artist6",  
+        "data": {  
+            "weight": 1  
+        }  
+    }, {  
+        "nodeTo": "artist7",  
+        "data": {  
+            "weight": 1  
+        }  
+    }, {  
+        "nodeTo": "artist9",  
+        "data": {  
+            "weight": 1  
+        }  
+    }]  
+}, {  
+    "id": "artist9",  
+    "name": "Pat Smear",  
+    "data": {  
+        "$dim": 10,  
+//        "$type": "star",  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": [{  
+        "nodeTo": "artist6",  
+        "data": {  
+            "weight": 1  
+        }  
+    }, {  
+        "nodeTo": "artist10",  
+        "data": {  
+            "weight": 1  
+        }  
+    }, {  
+        "nodeTo": "artist11",  
+        "data": {  
+            "weight": 3  
+        }  
+    }, {  
+        "nodeTo": "artist12",  
+        "data": {  
+            "weight": 3  
+        }  
+    }, {  
+        "nodeTo": "artist13",  
+        "data": {  
+            "weight": 3  
+        }  
+    }, {  
+        "nodeTo": "artist14",  
+        "data": {  
+            "weight": 3  
+        }  
+    }]  
+}, {  
+    "id": "artist10",  
+    "name": "Taylor Hawkins",  
+    "data": {  
+        "$dim": 10,  
+//        "$type": "star",  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": [{  
+        "nodeTo": "artist6",  
+        "data": {  
+            "weight": 1  
+        }  
+    }, {  
+        "nodeTo": "artist11",  
+        "data": {  
+            "weight": 1  
+        }  
+    }, {  
+        "nodeTo": "artist12",  
+        "data": {  
+            "weight": 3  
+        }  
+    }, {  
+        "nodeTo": "artist13",  
+        "data": {  
+            "weight": 3  
+        }  
+    }, {  
+        "nodeTo": "artist14",  
+        "data": {  
+            "weight": 3  
+        }  
+    }]  
+}, {  
+    "id": "artist11",  
+    "name": "Nate Mendel",  
+    "data": {  
+        "$dim": 10,  
+//        "$type": "star",  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": [{  
+        "nodeTo": "artist12",  
+        "data": {  
+            "weight": 1  
+        }  
+    }, {  
+        "nodeTo": "artist13",  
+        "data": {  
+            "weight": 1  
+        }  
+    }, {  
+        "nodeTo": "artist14",  
+        "data": {  
+            "weight": 3  
+        }  
+    }]  
+}, {  
+    "id": "artist12",  
+    "name": "Chris Shiflett",  
+    "data": {  
+        "$dim": 10,  
+//        "$type": "star",  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": [{  
+        "nodeTo": "artist13",  
+        "data": {  
+            "weight": 1  
+        }  
+    }, {  
+        "nodeTo": "artist14",  
+        "data": {  
+            "weight": 1  
+        }  
+    }]  
+}, {  
+    "id": "artist13",  
+    "name": "William Goldsmith",  
+    "data": {  
+        "$dim": 10,  
+//        "$type": "star",  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": [{  
+        "nodeTo": "artist14",  
+        "data": {  
+            "weight": 3  
+        }  
+    }]  
+}, {  
+    "id": "artist14",  
+    "name": "Franz Stahl",  
+    "data": {  
+        "$dim": 10,  
+//        "$type": "star",  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": []  
+}];  
+
+
+var groupsData = [{  
+    "id": "group0",  
+    "name": "Nine Inch Nails",  
+    "data": {  
+        "$dim": 20,  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": []  
+}, {  
+    "id": "group1",  
+    "name": "Pigface",  
+    "data": {  
+        "$dim": 20,  
+//        "$type": "square",  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": []  
+}, {  
+    "id": "group2",  
+    "name": "Exotic Birds",  
+    "data": {  
+        "$dim": 20,  
+//        "$type": "triangle",  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": []  
+}, {  
+    "id": "group3",  
+    "name": "A Perfect Circle",  
+    "data": {  
+        "$dim": 20,  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": []  
+}, {  
+    "id": "group4",  
+    "name": "Puscifer",  
+    "data": {  
+        "$dim": 20,  
+//        "$type":"triangle",  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": []  
+}, {  
+    "id": "group5",  
+    "name": "Jack Off Jill",  
+    "data": {  
+        "$dim": 20,  
+//        "$type": "star",  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": []  
+}, {  
+    "id": "group6",  
+    "name": "Nirvana",  
+    "data": {  
+        "$dim": 20,  
+//        "$type": "star",  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": []  
+}, {  
+    "id": "group7",  
+    "name": "Foo Fighters",  
+    "data": {  
+        "$dim": 20,  
+//        "$type": "star",  
+        "some other key": "some other value"  
+    },  
+    "adjacencies": []  
+}];  
 // create the data for the two visualizations
-const artistsData = {
-  id: 'artists',
-  name: 'Artists',
+/* const artistsData = {
+  id: 'artist0',
+  name: 'Trent Reznor',
   adjacencies: [
     {
       nodeTo: 'artist1',
@@ -25,19 +474,19 @@ const artistsData = {
 };
 
 const groupsData = {
-  id: 'groups',
-  name: 'Groups',
+  id: 'group1',
+  name: 'NineInchNails',
   adjacencies: [
     {
-      nodeTo: 'group1',
-      nodeFrom: 'group2',
+      nodeTo: 'group2',
+      nodeFrom: 'group1',
       data: {
         weight: 3
       }
     },
     {
-      nodeTo: 'group1',
-      nodeFrom: 'group3',
+      nodeTo: 'group3',
+      nodeFrom: 'group1',
       data: {
         weight: 2
       }
@@ -45,6 +494,8 @@ const groupsData = {
     // ... more edges
   ]
 };
+
+*/
 
 // create two Hypertree.Plot instances
 const ht1 = new infovis.Hypertree.Plot({
@@ -58,4 +509,30 @@ const ht2 = new infovis.Hypertree.Plot({
 });
 
 // create an edge between an artist and a group
-ht1.connect(ht2, 'artist1', 'group1');
+ht1.connect(ht2, 'artist0', 'group0');
+ht1.connect(ht2, 'artist1', 'group0');
+ht1.connect(ht2, 'artist2', 'group0');
+ht1.connect(ht2, 'artist3', 'group0');
+ht1.connect(ht2, 'artist4', 'group0');
+ht1.connect(ht2, 'artist5', 'group0');
+ht1.connect(ht2, 'artist6', 'group0');
+ht1.connect(ht2, 'artist0', 'group1');
+ht1.connect(ht2, 'artist5', 'group1');
+ht1.connect(ht2, 'artist4', 'group1');
+ht1.connect(ht2, 'artist0', 'group2');
+ht1.connect(ht2, 'artist5', 'group2');
+ht1.connect(ht2, 'artist2', 'group3');
+ht1.connect(ht2, 'artist3', 'group3');
+ht1.connect(ht2, 'artist3', 'group4');
+ht1.connect(ht2, 'artist5', 'group5');
+ht1.connect(ht2, 'artist6', 'group6');
+ht1.connect(ht2, 'artist7', 'group6');
+ht1.connect(ht2, 'artist8', 'group6');
+ht1.connect(ht2, 'artist9', 'group6');
+ht1.connect(ht2, 'artist6', 'group7');
+ht1.connect(ht2, 'artist9', 'group7');
+ht1.connect(ht2, 'artist10', 'group7');
+ht1.connect(ht2, 'artist11', 'group7');
+ht1.connect(ht2, 'artist12', 'group7');
+ht1.connect(ht2, 'artist13', 'group7');
+ht1.connect(ht2, 'artist14', 'group7');
