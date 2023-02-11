@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="node_modules/infovis/jit.js"></script>
+    <link rel="stylesheet" type="text/css" href="node_modules/infovis/jit.css" />
+  </head>
+  <body onload="init();">
+    <div id="infovis"></div>
+    <script type="text/javascript">
+      var json = {
+        "id": "node0",
+        "name": "Node 0",
+        "data": {
+          "someKey": "someValue"
+        },
+        "children": [
+          {
+            "id": "node1",
+            "name": "Node 1",
+            "data": {
+              "someKey": "someValue"
+            },
+            "children": [
+              {
+                "id": "node2",
+                "name": "Node 2",
+                "data": {
+                  "someKey": "someValue"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      };
+      function init() {
+        var ht = new $jit.Hypertree({
+          injectInto: 'infovis',
+          width: 800,
+          height: 600,
+          Navigation: {
+            enable: true,
+            panning: 'avoid nodes'
+          },
+          Node: {
+            overridable: true,
+            type: 'circle',
+            color: '#ccddee',
+            lineWidth: 2,
+            height: 20,
+            width: 20,
+            dim: 7,
+            align: "center"
+          },
+          Edge: {
+            overridable: true,
+            color: '#c17878',
+            lineWidth: 1.5
+          },
+          onCreateLabel: function(domElement, node){
+            domElement.innerHTML = node.name;
+          },
+          onPlaceLabel: function(domElement, node){
+            var style = domElement.style;
+            style.display = '';
+            style.cursor = 'pointer';
+            if (node._depth <= 1) {
+              style.fontSize = "0.8em";
+              style.color = "#ccc";
+            } else if(node._depth == 2){
+              style.fontSize = "0.7em";
+              style.color = "#494949";
+            } else {
+              style.display = 'none';
+            }
+            var left = parseInt(style.left);
+            var w = domElement.offsetWidth;
+            style.left = (left - w / 2) + 'px';
+          }
+        });
+        ht.loadJSON(json);
+        ht.refresh();
+      }
+    </script>
+  </body>
+</html>
