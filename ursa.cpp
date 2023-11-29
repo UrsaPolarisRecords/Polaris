@@ -61,11 +61,11 @@ ACTION addData(name curator, uint64_t id, string sourceLink, string dbMessage){
 }
 
 
-ACTION edit(name curator, uint64_t id, uint64_t txReference, string dbMessage) {
+ACTION edit(name curator, uint64_t id, string sourceLink uint64_t txReference, string dbMessage) {
   //require authorization of curator
   require_auth( curator );
   //require staking of tokens based on # of recent transactions
-  //publish curator, sourcelink, and message
+  //publish curator, sourcelink, transaction referenced in the edit, and message
   //mint tokens (ftxc*3)
   //increment the transaction counter plus 1
 
@@ -88,6 +88,12 @@ ACTION thumbsUpDn(name curator, uint64_t txReference, bool upDn);
   //require authorization of the curator
   //check that the referenced transaction exists
   //publish curator, txReference, and up/down boolean
+
+ACTION endorse(name curator, uint64_t nodeID, double stake);
+  //require authorization of the curator
+  //check that the referenced transaction exists
+  //publish curator, txReference, and up/down boolean
+
 
 /*
 ACTION ursa::hi(name from, string message) {
