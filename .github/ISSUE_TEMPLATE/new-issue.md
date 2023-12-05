@@ -34,13 +34,6 @@ As a _**[]**_, I would like _**[]**_ in order to _**[]**_.
 
 - **Testing**
 
-- [ ] Test in DEV
-- [ ] Test in PROD
+- Marketing
 
-#### Marketing
-
-- [ ] 
-
-#### Documentation
-
-- [ ]
+- Documentation
