@@ -9,39 +9,30 @@ assignees: ''
 
 ### 💡 Issue Name
 
+#### Acceptance Criteria:
+- [ ] one thing
+  - [ ] an important not about that thing
+- [ ] another thing 
+
 #### User Story
 As a _**[]**_, I would like _**[]**_ in order to _**[]**_.
 
-#### Description
-[insert additional feature/bug description, if available]
-
-#### Solution
-[add proposed solution, groomed feature description]
+#### Background
 
 
-### 👨‍💻 Deliverables
+#### Tasks
 
-#### Design
+- **Design**
 
-- [ ] 
+- **Smart Contract**
 
-#### Smart Contract
+- **Backend**
 
-- [ ] 
+- **Frontend**
 
-#### Backend
+- **Infrastructure**
 
-- [ ] 
-
-#### Frontend
-
-- [ ] 
-
-#### Infrastructure
-
-- [ ] 
-
-#### Testing
+- **Testing**
 
 - [ ] Test in DEV
 - [ ] Test in PROD
