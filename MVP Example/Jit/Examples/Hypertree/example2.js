@@ -805,8 +805,8 @@ function init(){
     ht2.controller.onComplete();
     ht1.controller.onComplete();
 }
-
-
+/*
+*/
 
 /*
  ht1.connect(ht2, 'artist0', 'group0');
