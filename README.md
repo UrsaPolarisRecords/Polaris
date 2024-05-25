@@ -2,7 +2,7 @@
 
 This repository contains the source code for the Polaris project, which includes an EOS smart contract, a JavaScript front-end, a graph database, and a translator for data visualization.
 
-![Image of Polaris](https://github.com/UrsaPolarisRecords/Polaris/blob/main/Website%20Mock-up-01.png)
+![Image of Polaris](https://github.com/UrsaPolarisRecords/Polaris/blob/main/WorkingFiles/Website%20Mock-up-01.png?raw=true)
 
 A visualized decentralized incentivized music encyclopedia, with tokens awarded to curators and artists, and used for native advertising
 
